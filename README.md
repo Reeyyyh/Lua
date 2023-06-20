@@ -1,0 +1,2 @@
+# Belajar Lua
+sistem kasir
