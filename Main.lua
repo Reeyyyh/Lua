@@ -1,37 +1,43 @@
 -- sistem kasir lua try
-local harga = {15000, 13000, 11000}
-local menu = {"kopi original", "kopi Mocha", "Kopi cappucino"}
-local total = 0
 
-print("=========== daftar menu ==========")
-print(string.format("1.%s \t| Rp.%i", menu[1], harga[1]))
-print(string.format("2.%s \t\t| Rp.%i", menu[2], harga[2]))
-print(string.format("3.%s \t| Rp.%i", menu[3], harga[3]))
---print("0.check out")
+-- global variabel
+    Harga = {15000, 13000, 11000}
+    Menu = {"kopi original", "kopi Mocha", "Kopi cappucino"}
+    Total = 0
+
+local DisplayMenu = function ()
+    print("=========== daftar menu ==========")
+    print(string.format("1.%s \t| Rp.%i", Menu[1], Harga[1]))
+    print(string.format("2.%s \t\t| Rp.%i", Menu[2], Harga[2]))
+    print(string.format("3.%s \t| Rp.%i", Menu[3], Harga[3]))
+end
+
+DisplayMenu()
+
 io.write("pilih menu : ")
 
 local pilih = tonumber(io.read())
 
 if (pilih == 1) then
-    print(string.format("%s | Rp.%i", menu[1], harga[1]))
+    print(string.format("%s | Rp.%i", Menu[1], Harga[1]))
     io.write("Masukan jumlah pesanan : ")
     local pesan = tonumber(io.read())
-    total = harga[1] * pesan
+    Total = Harga[1] * pesan
 elseif (pilih == 2) then
-    print(string.format("%s | Rp.%i", menu[2], harga[2]))
+    print(string.format("%s | Rp.%i", Menu[2], Harga[2]))
     io.write("Masukan jumlah pesanan : ")
     local pesan = tonumber(io.read())
-    total = harga[2] * pesan
+    Total = Harga[2] * pesan
 elseif (pilih == 3) then
-    print(string.format("%s | Rp.%i", menu[3], harga[3]))
+    print(string.format("%s | Rp.%i", Menu[3], Harga[3]))
     io.write("Masukan jumlah pesanan : ")
     local pesan = tonumber(io.read())
-    total = harga[3] * pesan
+    Total = Harga[3] * pesan
 else
     print("menu tidak tersedia")
 end
 
-print("Total Harga : "..total)
+print("Total Harga : "..Total)
 
 --[[
     still need a loops
