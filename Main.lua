@@ -40,5 +40,5 @@ end
 print("Total Harga : "..Total)
 
 --[[
-    still need a loops
+    still need a loops lagi
 ]]
